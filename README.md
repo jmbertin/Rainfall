@@ -7,18 +7,31 @@ There are a total of 10 mandatory levels and 4 bonus levels. Each level contains
 Below are the links to the directories for each level:
 
 [Level0](./level0/walkthrough.md) - Reverse engineering
+
 [Level1](./level1/walkthrough.md) - Buffer overflow & deadcode
+
 [Level2](./level2/walkthrough.md) - Buffer overflow & shellcode
+
 [Level3](./level3/walkthrough.md) - Format string attack
+
 [Level4](./level4/walkthrough.md) - Format string attack
+
 [Level5](./level5/walkthrough.md) - Buffer overflow & GOT table
+
 [Level6](./level6/walkthrough.md) - Buffer overflow & deadcode
+
 [Level7](./level7/walkthrough.md) - Buffer overflow & deadcode
+
 [Level8](./level8/walkthrough.md) - Reverse engineering
+
 [Level9](./level9/walkthrough.md) - Buffer overflow & shellcode
+
 [Bonus0](./bonus0/walkthrough.md) - Buffer overflow & shellcode
+
 [Bonus1](./bonus1/walkthrough.md) - Buffer overflow
+
 [Bonus2](./bonus2/walkthrough.md) - Buffer overflow & shellcode
+
 [Bonus3](./bonus3/walkthrough.md) - Reverse engineering
 
 ----
