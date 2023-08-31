@@ -1,7 +1,7 @@
-# Rainfall
+#Rainfall
 Welcome to the Rainfall project! This project is part of the intermediate security course at École 42. Rainfall is a Capture The Flag (CTF) challenge where you will find vulnerabilities in code and exploit them to progress to the next level.
 
-## Project Overview
+##Project Overview
 There are a total of 10 mandatory levels and 4 bonus levels. Each level contains a vulnerability, and your goal is to exploit it in order to retrieve the flag. This flag will be your key to the next level.
 
 Below are the links to the directories for each level:
@@ -23,7 +23,7 @@ Below are the links to the directories for each level:
 
 ----
 
-## What's Inside Each Level?
+##What's Inside Each Level?
 In every directory, you'll find the following files:
 
 - walkthrough.md: An explanation of the vulnerability and how to exploit it.
@@ -32,7 +32,7 @@ In every directory, you'll find the following files:
 
 ----
 
-## Getting Started
+##Getting Started
 Start with Level0 and read the walkthrough.md to understand the nature of the vulnerability.
 Inspect the vulnerable.c file to study the code.
 Use your knowledge and skills to exploit the vulnerability and retrieve the flag from the code.
@@ -41,7 +41,7 @@ Remember, the goal is to understand the vulnerabilities and learn how to prevent
 
 ----
 
-## Contribute
+##Contribute
 Feel free to submit pull requests or issues if you find any mistakes or have suggestions for improvements.
 
 ----
