@@ -22,16 +22,19 @@ This payload is different because the source code does a double redirection on t
 The first step is to find the adress of our string :
 
 **Getting the string adress :**
+
 ``(gdb) disas main``
 >[...]
 0x08048677 <+131>:	call   0x804870e <_ZN1N13setAnnotationEPc>
 This is the call for the function who takes our string.
 
 Find the adress of the start of the function that allocate our string
+
 ``(gdb) b *0x804870e``
 >Breakpoint 1 at 0x804870e
 
 This adress is the start of the function that allocate our string
+
 ``(gdb) run AAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCCCCCCC``
 
 ``(gdb) step``
@@ -40,6 +43,7 @@ which has no line number information.
 0x0804867c in main ()
 
 We are now back in the main function, and our string is allocated somewhere, let's find it, normally it should be in eax register.
+
 ``(gdb) i r``
 >eax            0x804a00c	134520844
 
