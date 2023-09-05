@@ -15,9 +15,11 @@ In this exercices we got a buffer overflow but on the heap, not on the stack. Th
 ### Building the payload
 
 We want to build this payload :
+
 **64 char to overflow + n ADRESS**
 
 **Getting the n function adress :**
+
 ``(gdb) info functions``
 >[...]
 0x08048454  n
